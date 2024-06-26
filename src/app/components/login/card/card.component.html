@@ -1,0 +1,42 @@
+<main>
+
+	<fieldset class="card">
+
+		<legend>
+
+			<div class="frame">
+				<fa-icon class="default" animation="bounce" [icon]="avatarDefault" />
+				<mat-icon class="user"><img [@animationAvatar]="stateAvatar" src="{{ URL_AVATAR }}/{{ avatar }}" alt=""></mat-icon>
+			</div>
+
+		</legend>
+
+		<form class="formulario" method="post" autocomplete="off" [formGroup]="formGroup">
+
+			<mat-form-field appearance="fill">
+				<mat-label>Email ID</mat-label>
+				<mat-icon matPrefix>alternate_email</mat-icon>
+				<input class="usulog" matInput placeholder="Email" formControlName="email" (keyup)="change()" autofocus>
+			</mat-form-field>
+
+			<mat-form-field appearance="fill">
+				<mat-label>Password</mat-label>
+				<mat-icon matPrefix>vpn_key</mat-icon>
+				<input type="password" matInput placeholder="Password" formControlName="password" [type]="showPassword ? 'password' : 'text'">
+				<mat-icon matSuffix (click)="showPassword = !showPassword">{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+			</mat-form-field>
+
+			<button *ngIf="!waiting" mat-raised-button color="primary" (click)="login()">LOGIN</button>
+
+			<button *ngIf="waiting" mat-raised-button color="primary">
+				<mat-icon>
+					<mat-spinner color="accent" diameter="18"></mat-spinner>
+				</mat-icon>
+				WAIT...
+			</button>
+
+		</form>
+
+	</fieldset>
+
+</main>

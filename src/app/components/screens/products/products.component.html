@@ -1,0 +1,54 @@
+<main class="main-screen">
+
+	<app-screen-header screenTitle="Work with products" closeRoute="main"/>
+
+	<section class="section-content">
+
+		<article class="article-form">
+
+			<form autocomplete="off" [formGroup]="formGroup">
+
+				<mat-form-field appearance="fill">
+					<mat-label>Name</mat-label>
+					<input matInput placeholder="Product name" formControlName="name">
+					<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+				</mat-form-field>
+
+				<mat-form-field floatLabel="always">
+					<mat-label>Price</mat-label>
+					<input matInput type="number" class="right-align" placeholder="0" formControlName="price">
+					<span matTextPrefix>R$&nbsp;</span>
+					<span matTextSuffix>.00</span>
+				  </mat-form-field>
+
+			</form>
+
+		</article>
+
+
+		<article class="article-table" [style.height.px]="articleTableHeight">
+
+			<app-table-products [dataSource]="dataSource" (delete)="delete($event)" (update)="update($event)" />
+
+		</article>
+
+		<section class="section-footer">
+
+			<article class="article-records">
+
+				Total records: {{ records }}
+
+			</article>
+
+			<article class="article-buttons">
+
+				<button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+				<button mat-raised-button color="primary" (click)="insert()" [disabled]="!formGroup.valid" class="btnAddSave">{{ btnAddSave }}</button>
+
+			</article>
+
+		</section>
+
+	</section>
+
+</main>

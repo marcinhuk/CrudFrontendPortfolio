@@ -1,0 +1,34 @@
+<mat-toolbar class="mat-elevation-z6">
+
+	<button mat-button [matMenuTriggerFor]="file">File</button>
+
+	<mat-menu #file="matMenu">
+
+		<button mat-menu-item (click)="exit()">
+			<mat-icon>exit_to_app</mat-icon>
+			<span>Exit</span>
+		</button>
+
+	</mat-menu>
+
+	<button mat-button [matMenuTriggerFor]="workWith">Work with</button>
+	<mat-menu #workWith="matMenu">
+
+		<button mat-menu-item routerLink="orders">
+			<mat-icon>note_add</mat-icon>
+			<span>Orders</span>
+		</button>
+
+		<button mat-menu-item routerLink="products">
+			<mat-icon>bookmark_add</mat-icon>
+			<span>Products</span>
+		</button>
+
+		<button *ngIf="admin == 1" mat-menu-item routerLink="users">
+			<mat-icon>person_add</mat-icon>
+			<span>Users</span>
+		</button>
+
+	</mat-menu>
+
+</mat-toolbar>

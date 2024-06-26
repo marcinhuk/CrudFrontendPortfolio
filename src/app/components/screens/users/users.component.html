@@ -1,0 +1,72 @@
+<main class="main-screen">
+
+	<app-screen-header screenTitle="Work with users" closeRoute="main"/>
+
+	<section class="section-content">
+
+		<article class="article-form">
+
+			<form autocomplete="off" [formGroup]="formGroup">
+
+				<div class="avatar" (click)="avatarConfig()">
+				<!-- <div class="avatar" routerLink="../user/avatar-config"> -->
+					<mat-icon class="camera" style="z-index: -99; position: absolute;">photo_camera</mat-icon>
+					<img src="{{ URL_AVATAR }}/{{ avatar }}" alt="">
+				</div>
+
+				<mat-form-field appearance="fill">
+					<mat-label>Full name</mat-label>
+					<input matInput placeholder="Placeholder" formControlName="full_name">
+					<mat-icon matSuffix>people</mat-icon>
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>Email</mat-label>
+					<input matInput placeholder="Placeholder" formControlName="email">
+					<mat-icon matSuffix>alternate_email</mat-icon>
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>Password</mat-label>
+					<input type="password" matInput placeholder="Password" formControlName="password">
+					<mat-icon matSuffix>vpn_key</mat-icon>
+				</mat-form-field>
+
+				<mat-form-field appearance="fill">
+					<mat-label>Confirm password</mat-label>
+					<input type="password" matInput placeholder="Password" formControlName="confirmPassword">
+					<mat-icon matSuffix>vpn_key</mat-icon>
+				</mat-form-field>
+
+			</form>
+
+		</article>
+
+
+		<article class="article-table" [style.height.px]="articleTableHeight">
+
+			<app-table-users [dataSource]="dataSource" (delete)="delete($event)" (update)="update($event)"/>
+
+		</article>
+
+		<section class="section-footer">
+
+			<section class="article-records">
+
+				Total records: {{ records }}
+
+			</section>
+
+			<article class="article-buttons">
+
+				<button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+
+				<button mat-raised-button color="primary" class="btnAddSave" (click)="insert()" [disabled]="!formGroup.valid">{{ btnAddSave }}</button>
+
+			</article>
+
+		</section>
+
+	</section>
+
+</main>

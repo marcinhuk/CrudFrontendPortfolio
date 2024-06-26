@@ -1,0 +1,28 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	color: #000;
+	background-image: linear-gradient(to left top, #000000, #210e15, #3a1325, #531538, #6d174e, #74175c, #7a196b, #7d1d7b, #6c2182, #582687, #3d2a8c, #082e8f);
+}
+
+.success-snackbar {
+	--mdc-snackbar-container-color: #008000;
+	--mat-mdc-snack-bar-button-color: #ffffff;
+	text-align: center;
+}
+
+.error-snackbar {
+	--mdc-snackbar-container-color: #ff0000;
+	--mat-mdc-snack-bar-button-color: #ffffff;
+	text-align: center;
+}
+
+.warning-snackbar {
+	--mdc-snackbar-container-color: #ffa500;
+	--mat-mdc-snack-bar-button-color: #ffffff;
+	text-align: center;
+}

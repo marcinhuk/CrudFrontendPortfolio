@@ -1,0 +1,25 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    height: 30px;
+    padding: 0 5px 0 5px;
+	background-color: #f9f2f223;
+	color: #fff;
+
+	.avatar {
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+	}
+
+	.user {
+		flex-grow: 1;
+		margin-left: 5px;
+
+		.fullName {
+			font-weight: 100;
+			font-size: 12px;
+		}
+	}
+}

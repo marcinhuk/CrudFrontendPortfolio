@@ -1,0 +1,31 @@
+<main class="main-screen">
+
+	<app-screen-header screenTitle="Work with orders" closeRoute="/main"/>
+
+	<section class="section-content">
+
+		<article class="article-form">
+
+			<button mat-raised-button color="accent" class="btnAddSave" (click)="insert()">Add new order</button>
+
+		</article>
+
+		<article class="article-table"  [style.height.px]="articleTableHeight">
+
+			<app-table-orders [dataSource]="dataSource" (list)="list()" />
+
+		</article>
+
+		<section class="section-footer">
+
+			<article class="article-records">
+
+				Total records: {{ records }}
+
+			</article>
+
+		</section>
+
+	</section>
+
+</main>

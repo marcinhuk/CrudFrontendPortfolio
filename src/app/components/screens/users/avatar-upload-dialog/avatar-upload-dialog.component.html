@@ -1,0 +1,39 @@
+<main>
+
+	<app-dialog-header dialogTitle="Avatar configuration" closeData="{{ avatar }}"/>
+
+
+	<section class="content">
+
+		<img class="avatar" src="{{ URL_AVATAR }}/{{ avatar }}" alt="">
+
+		<article class="upload">
+
+			<!-- <button mat-raised-button color="primary" (click)="fileInput.click()">
+				<mat-icon>attach_file</mat-icon>
+				Attach
+			</button>
+
+			<button mat-raised-button color="accent" disabled="{{ !fileName }}" (click)="send()">
+				<mat-icon>send</mat-icon>
+				Send
+			</button> -->
+
+			<button mat-mini-fab color="primary" matTooltip="Attach new avatar" (click)="fileInput.click()">
+				<mat-icon>attach_file</mat-icon>
+			</button>
+
+			<button mat-mini-fab color="accent" matTooltip="Send new avatar to server" disabled="{{ !fileName }}" (click)="send()">
+				<mat-icon>send</mat-icon>
+			</button>
+
+			<input hidden (change)="onFileSelected($event)" #fileInput type="file" accept="image/*">
+
+			<span class="nameFile">{{ fileName || "No file selected for upload." }}</span>
+
+		</article>
+
+
+	</section>
+
+</main>

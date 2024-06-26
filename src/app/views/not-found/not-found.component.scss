@@ -1,0 +1,32 @@
+main {
+    display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+	color: #fff;
+
+	.icon {
+		font-size: 7rem;
+		height: 110px;
+		width: 110px;
+		border: 0px solid black;
+	}
+
+	.icon .icon {
+		font-size: 7rem;
+	}
+
+	.codigo {
+		font-size: 7rem;
+		color: #f50000;
+		line-height: 90px;
+		border: 0px solid black;
+	}
+
+	.mensagem {
+		line-height: 35px;
+		font-size: 2rem;
+		border: 0px solid black;
+	}
+}

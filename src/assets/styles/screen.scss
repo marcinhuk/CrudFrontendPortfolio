@@ -1,0 +1,61 @@
+.main-screen {
+	background-color: #ffffff42;
+	border-radius: 10px 10px 0 0;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+	.section-content {
+		padding: 10px;
+
+		.article-form {
+
+			padding: 4px;
+
+			mat-icon {
+				color: #999;
+			}
+
+			form {
+				display: flex;
+				gap: 10px;
+
+				mat-form-field {
+					flex-grow: 1;
+				}
+
+				span {
+					color: #989898;
+				}
+			}
+		}
+
+		.article-table {
+			overflow-x: auto;
+			border: 1px solid #dddbdb;
+			overflow: auto;
+			margin: 3px 3px 0 3px;
+			background-color: #f0f0f0;
+		}
+
+		.section-footer {
+			display: flex;
+			margin-top: 15px;
+			color: #fff;
+			justify-content: baseline;
+			align-items: baseline;
+
+			.article-records {
+				flex-grow: 1;
+			}
+
+			.article-buttons {
+				display: flex;
+				justify-content: end;
+				gap: 5px;
+
+				.btnAddSave {
+					width: 65px;
+				}
+			}
+		}
+	}
+}

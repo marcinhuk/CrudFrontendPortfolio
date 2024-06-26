@@ -1,0 +1,11 @@
+<mat-toolbar class="footer mat-elevation-z10">
+
+	<img *ngIf="avatar" src="{{ URL_AVATAR }}/{{ avatar }}" alt="" class="avatar">
+
+	<div class="user">
+		<span class="fullName">
+			Logged user: {{ full_name }}
+		</span>
+	</div>
+
+</mat-toolbar>

@@ -1,0 +1,43 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+	<ng-container matColumnDef="index">
+		<mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+		<mat-cell *matCellDef="let element; let i = index">{{i + 1}}</mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="full_name">
+		<mat-header-cell *matHeaderCellDef>User name</mat-header-cell>
+		<mat-cell *matCellDef="let element"> {{element.full_name}} </mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="email">
+		<mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+		<mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="active">
+		<mat-header-cell *matHeaderCellDef>Active</mat-header-cell>
+		<mat-cell *matCellDef="let element">
+			<mat-slide-toggle [checked]="!!element.active" (change)="patchActive(element.id, element.active)"/>
+		</mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="admin">
+		<mat-header-cell *matHeaderCellDef>Admin</mat-header-cell>
+		<mat-cell *matCellDef="let element">
+			<mat-slide-toggle [checked]="!!element.admin" (change)="patchAdmin(element.id, element.admin)"/>
+		</mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="actions">
+		<mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+		<mat-cell *matCellDef="let element">
+			<mat-icon color="accent" fontIcon="delete" matTooltip="Delete record" (click)="deleteDialog(element.id)"></mat-icon>
+			<mat-icon color="primary" fontIcon="edit" matTooltip="Edit record" (click)="update(element.id, element.full_name, element.email, element.password, element.avatar)"></mat-icon>
+		</mat-cell>
+	</ng-container>
+
+	<mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+	<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</mat-table>

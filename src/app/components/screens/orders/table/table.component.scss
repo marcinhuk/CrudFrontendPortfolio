@@ -1,0 +1,26 @@
+.mat-column-id, .mat-column-actions {
+	max-width: 110px;
+}
+
+.mat-column-id, .mat-column-date, .mat-column-status, .mat-column-actions {
+	justify-content: center;
+}
+
+.mat-column-id {
+	span {
+		text-align: center;
+		color: #fff;
+		width: 40px;
+		font-weight: bold;
+		background-color: #FE4786;
+		border-radius: 50%;
+	}
+}
+
+
+.mat-column-status {
+	mat-icon {
+		cursor: help;
+		color: #3F51B5;
+	}
+}
