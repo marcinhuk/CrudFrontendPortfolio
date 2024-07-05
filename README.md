@@ -11,7 +11,7 @@
 6. Criar os arquivos abaixo dentro da pasta "/src/environments":
 	- environments.dv.ts
 	- environments.pd.ts
-7. Dentro de cada arquivo crias as variáveis abaixo:
+7. Dentro de cada arquivo criar as variáveis abaixo:
 
 ```javascript
 	export const API_URL    = 'http://localhost:3099'
