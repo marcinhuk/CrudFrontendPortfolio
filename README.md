@@ -12,8 +12,12 @@
 	- environments.dv.ts
 	- environments.pd.ts
 7. Dentro de cada arquivo crias as variáveis abaixo:
-	- export const API_URL    = 'http://localhost:3099'
-	- export const AVATAR_URL = 'http://localhost:3099/avatar/'
-	- export const USULOG     = 'login_default_na_tela_de_login'
-	- export const USUSEN     = 'senha_default_na_tela_de_login'
+
+```javascript
+	export const API_URL    = 'http://localhost:3099'
+	export const AVATAR_URL = 'http://localhost:3099/avatar/'
+	export const USULOG     = 'login_default_na_tela_de_login'
+	export const USUSEN     = 'senha_default_na_tela_de_login'
+```
+
 8. Executar "npm start".
