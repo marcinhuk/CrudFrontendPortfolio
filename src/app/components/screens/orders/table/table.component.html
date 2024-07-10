@@ -22,6 +22,7 @@
 		<mat-cell  *matCellDef="let element">
 			<mat-icon color="accent" fontIcon="delete" matTooltip="Delete record" (click)="deleteDialog(element.id)"></mat-icon>
 			<mat-icon color="primary" fontIcon="post_add" matTooltip="Work with order products" routerLink="../order-products/{{element.id}}"></mat-icon>
+			<mat-icon color="warn" fontIcon="summarize" matTooltip="Work with order report" (click)="openReport(element.id)"></mat-icon>
 		</mat-cell>
 	</ng-container>
 

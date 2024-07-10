@@ -37,10 +37,10 @@ export class UsersComponent {
 	constructor(private usersService: UsersService, private formBuilder: FormBuilder, private sharedService: SharedService, private router: Router, private matDialog: MatDialog) {
 		this.formGroup = formBuilder.group({
 			id: [''],
-			full_name: ['Carlos Bolsonaro', [Validators.required, Validators.minLength(5), Validators.maxLength(150)] ],
-			email: ['carluxo@bolsonaro.com.br', [Validators.required, Validators.minLength(5), Validators.maxLength(150)] ],
-			password: ['123456789', [Validators.required, Validators.minLength(8), Validators.maxLength(50)] ],
-			confirmPassword: ['123456789', [Validators.required, Validators.minLength(8), Validators.maxLength(50)] ],
+			full_name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(150)] ],
+			email: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(150)] ],
+			password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(50)] ],
+			confirmPassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(50)] ],
 		})
 	}
 

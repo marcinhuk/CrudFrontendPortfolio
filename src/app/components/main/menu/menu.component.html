@@ -24,7 +24,31 @@
 			<span>Products</span>
 		</button>
 
+		<button mat-menu-item [matMenuTriggerFor]="reports">
+			<mat-icon>summarize</mat-icon>
+			<span>Reports</span>
+		</button>
+
 		<button *ngIf="admin == 1" mat-menu-item routerLink="users">
+			<mat-icon>person_add</mat-icon>
+			<span>Users</span>
+		</button>
+
+	</mat-menu>
+
+	<mat-menu #reports="matMenu">
+
+		<button mat-menu-item (click)="dialogMonthYear('orders', 'Orders report')">
+			<mat-icon>note_add</mat-icon>
+			<span>Orders</span>
+		</button>
+
+		<button mat-menu-item (click)="dialogMonthYear('products', 'Products report')">
+			<mat-icon>bookmark_add</mat-icon>
+			<span>Products</span>
+		</button>
+
+		<button mat-menu-item (click)="dialogMonthYear('users', 'Users report')">
 			<mat-icon>person_add</mat-icon>
 			<span>Users</span>
 		</button>

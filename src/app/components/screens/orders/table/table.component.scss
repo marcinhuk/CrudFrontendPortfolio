@@ -1,5 +1,5 @@
 .mat-column-id, .mat-column-actions {
-	max-width: 110px;
+	max-width: 140px;
 }
 
 .mat-column-id, .mat-column-date, .mat-column-status, .mat-column-actions {
@@ -23,4 +23,9 @@
 		cursor: help;
 		color: #3F51B5;
 	}
+}
+
+.mat-column-actions {
+	display: flex;
+	column-gap: 10px;
 }

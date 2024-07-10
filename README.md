@@ -15,7 +15,7 @@
 
 ```javascript
 	export const API_URL    = 'http://localhost:3099'
-	export const AVATAR_URL = 'http://localhost:3099/avatar/'
+	export const AVATAR_URL = 'http://localhost:3099/avatars/'
 	export const USULOG     = 'login_default_na_tela_de_login'
 	export const USUSEN     = 'senha_default_na_tela_de_login'
 ```

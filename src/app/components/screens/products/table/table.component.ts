@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { MatTableModule } from '@angular/material/table'
 import { MatIcon } from '@angular/material/icon'
@@ -13,7 +14,7 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
   standalone: true,
-  imports: [MatTableModule, MatIcon, MatTooltip]
+  imports: [MatTableModule, MatIcon, MatTooltip, CommonModule]
 })
 export class TableComponent implements AfterViewInit {
 

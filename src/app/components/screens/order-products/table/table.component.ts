@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core'
-import { RouterLink } from '@angular/router'
+import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 import { MatTableModule } from '@angular/material/table'
 import { MatIcon } from '@angular/material/icon'
@@ -13,14 +14,14 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
 	templateUrl: './table.component.html',
 	styleUrl: './table.component.scss',
 	standalone: true,
-	imports: [MatTableModule, MatIcon, RouterLink, MatTooltip]
+	imports: [MatTableModule, MatIcon, RouterLink, MatTooltip, CommonModule]
 })
 export class TableComponent implements AfterViewInit {
 
 	@Input() dataSource: any
 	@Output("list") eEList: EventEmitter<any> = new EventEmitter()
 	@Output("update") eEUpdate: EventEmitter<any> = new EventEmitter()
-	displayedColumns = ['index', 'name', 'amount', 'actions']
+	displayedColumns = ['index', 'name', 'amount', 'price', 'actions']
 
 	constructor(private matDialog: MatDialog) {}
 

@@ -8,6 +8,7 @@ import { MatIcon } from '@angular/material/icon'
 import { MatMenuModule } from '@angular/material/menu'
 import { MatDialog } from '@angular/material/dialog'
 import { DialogExitComponent } from './dialog-exit/dialog-exit.component'
+import { DialogMonthYearComponent } from '../../reports/dialog-month-year/dialog-month-year.component'
 
 @Component({
 	selector: 'app-menu',
@@ -25,5 +26,11 @@ export class MenuComponent{
 
 	exit = () => {
 		this.matDialog.open(DialogExitComponent)
+	}
+
+	dialogMonthYear(relnom: String, reltit: String):void{
+		const dialogMonthYear = this.matDialog.open(DialogMonthYearComponent, {
+			data: {relnom, reltit}
+		})
 	}
 }

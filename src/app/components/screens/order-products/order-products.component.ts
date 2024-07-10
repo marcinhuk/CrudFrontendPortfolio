@@ -24,6 +24,17 @@ import { ScreenHeaderComponent } from '../../shareds/screen-header/screen-header
 
 export class OrderProductsComponent {
 
+	private _totalPrice: number = 0
+	private _totalPoducts: number = 0
+
+	get totalPrice(){
+		return this._totalPrice
+	}
+
+	get totalProducts(){
+		return this._totalPoducts
+	}
+
 	dataSource : any = null
 	records: number = 0
 	articleTableHeight: number = 0
@@ -59,6 +70,8 @@ export class OrderProductsComponent {
 		this.orderProductsService.list(this.id).subscribe((data) => {
 			this.dataSource = data
 			this.records = this.dataSource.length
+			this._totalPrice = data.reduce((acumulador: number, proximoValor: { price: number, amount: number }) => acumulador + (proximoValor.price * proximoValor.amount), 0)
+			this._totalPoducts = data.reduce((acumulador: number, proximoValor: { amount: number }) => acumulador + proximoValor.amount, 0)
 		})
 	}
 
